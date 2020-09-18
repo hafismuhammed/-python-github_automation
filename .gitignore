@@ -1,0 +1,13 @@
+# vscode 
+.vscode/* 
+!.vscode/settings.json 
+!.vscode/tasks.json 
+!.vscode/launch.json 
+!.vscode/extensions.json 
+.history
+
+#project-files
+test-one
+.DS_Store
+__pycache__
+src/config.py
