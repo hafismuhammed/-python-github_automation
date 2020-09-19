@@ -4,6 +4,9 @@ import sys
 import pyperclip
 from config import USERNAME, PASSWORD
 
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--headless')
+
 try:
     repo_name = sys.argv[1]
 except:
@@ -16,7 +19,7 @@ except:
     visibility = 'public'
 
 browser = webdriver.Chrome(
-    executable_path=r'C:\Users\HAFIS\Desktop\chromedriver_win32\chromedriver'
+    executable_path=r'C:\Users\HAFIS\Desktop\chromedriver_win32\chromedriver', options=chrome_options
 )
 
 browser.maximize_window()
@@ -50,6 +53,9 @@ try:
         )
     copy_btn.click()
 
-    print(pyperclip.paste())
+    #print(pyperclip.paste())
+    print(f'git remote add origin https://github.com/hafismuhammed/{repo_name}.git')
+    print('git branch -M master')
+    print('git push -u origin master')
 except:
     print("can't create repository, try agin")
